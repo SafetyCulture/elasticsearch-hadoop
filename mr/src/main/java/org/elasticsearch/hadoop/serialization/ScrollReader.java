@@ -710,7 +710,10 @@ public class ScrollReader {
             try {
                 return parseValue(esType);
             } catch (Exception ex) {
-                throw new EsHadoopParsingException(String.format(Locale.ROOT, "Cannot parse value [%s] for field [%s]", rawValue, fieldName), ex);
+                //throw new EsHadoopParsingException(String.format(Locale.ROOT, "Cannot parse value [%s] for field [%s]", rawValue, fieldName), ex);
+                // instead of throwing out exception, simply return the rawValue, leaving
+                // the consumer to handle this issue.
+                return rawValue;
             }
         }
         return null;

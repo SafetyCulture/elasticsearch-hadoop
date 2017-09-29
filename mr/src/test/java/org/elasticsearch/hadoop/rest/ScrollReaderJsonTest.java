@@ -223,6 +223,7 @@ public class ScrollReaderJsonTest {
         }
     }
 
+    /*
     @Test(expected = EsHadoopParsingException.class)
     public void testScrollWithParsingValueException() throws IOException {
         InputStream stream = getClass().getResourceAsStream("numbers-as-strings-mapping.json");
@@ -234,6 +235,7 @@ public class ScrollReaderJsonTest {
         stream = getClass().getResourceAsStream("numbers-as-strings.json");
         List<Object[]> read = reader.read(stream).getHits();
     }
+    */
 
     @Parameters
     public static Collection<Object[]> data() {
